@@ -1,0 +1,22 @@
+name: flutter_voip_call_app
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  uuid: ^2.0.2
+  firebase_messaging: ^7.0.0
+  sip_ua: ^0.3.5
+  shared_preferences:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
