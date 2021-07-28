@@ -1,5 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_voip_call_app/routes/index.dart' as GeneratedRoutes;
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      onGenerateRoute: GeneratedRoutes.Router.generateRoute,
+      initialRoute: "/",
     );
   }
 }
