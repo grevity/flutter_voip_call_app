@@ -11,7 +11,7 @@ class NotificationService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         if(remoteMessage.data.isNotEmpty()) {
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("route","/incoming_call");
+            intent.putExtra("route","/incoming_call?callerName=${remoteMessage.data["callerName"]}&callerId=${remoteMessage.data["callerId"]}");
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent);
         }

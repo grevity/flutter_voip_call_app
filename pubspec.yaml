@@ -13,6 +13,7 @@ dependencies:
   uuid: ^2.0.2
   firebase_messaging: ^7.0.0
   sip_ua: ^0.3.5
+  dio: 3.0.10
   shared_preferences:
 
 dev_dependencies:

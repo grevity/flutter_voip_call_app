@@ -5,11 +5,17 @@ import 'package:flutter_voip_call_app/main.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch (settings.name) {
+    final uri = Uri.parse(settings.name);
+    final route = uri.path;
+    switch (route) {
       case '/':
         return CupertinoPageRoute(builder: (_) => MyHomePage());
       case '/incoming_call':
-        return CupertinoPageRoute(builder: (_) => IncomingCall());
+        final callerName = uri.queryParameters['callerName'];
+        final callerId = uri.queryParameters['callerId'];
+        return CupertinoPageRoute(builder: (_) => IncomingCall(callerName, callerId));
+      // case "/outgoing_call":
+      //   return Cup
       default:
         return CupertinoPageRoute(
           builder: (_) => Scaffold(
